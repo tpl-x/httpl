@@ -10,14 +10,14 @@ import (
 	"os"
 )
 
-func NewSlogLogger(config *config.AppConfig) *slog.Logger {
+func NewSlogLogger(logConfig *config.LogConfig) *slog.Logger {
 	encoderCfg := zap.NewProductionEncoderConfig()
 	lumberjackLogger := &lumberjack.Logger{
-		Filename:   config.Log.FileName,
-		MaxSize:    config.Log.MaxSize,
-		MaxBackups: config.Log.MaxBackups,
-		MaxAge:     config.Log.MaxKeepDays,
-		Compress:   config.Log.Compress,
+		Filename:   logConfig.FileName,
+		MaxSize:    logConfig.MaxSize,
+		MaxBackups: logConfig.MaxBackups,
+		MaxAge:     logConfig.MaxKeepDays,
+		Compress:   logConfig.Compress,
 	}
 	writeSyncer := zapcore.NewMultiWriteSyncer(zapcore.AddSync(os.Stdout), zapcore.AddSync(lumberjackLogger))
 	encoder := zapcore.NewConsoleEncoder(encoderCfg)
