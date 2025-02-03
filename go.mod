@@ -4,7 +4,7 @@ go 1.22.6
 
 require (
 	github.com/google/wire v0.6.0
-	github.com/spf13/pflag v1.0.5
+	github.com/spf13/pflag v1.0.6
 	go.uber.org/zap v1.27.0
 	go.uber.org/zap/exp v0.3.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
