@@ -3,7 +3,7 @@ module github.com/tpl-x/httpl
 go 1.22.6
 
 require (
-	github.com/google/wire v0.6.0
+	github.com/google/wire v0.7.0
 	github.com/spf13/pflag v1.0.7
 	go.uber.org/zap v1.27.0
 	go.uber.org/zap/exp v0.3.0
